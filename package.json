@@ -1,0 +1,22 @@
+{
+  "name": "image-search-layer",
+  "version": "1.0.0",
+  "description": "an API to find images using search terms, as well as see recently searched terms",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porygonj/image-search-layer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/porygonj/image-search-layer/issues"
+  },
+  "homepage": "https://github.com/porygonj/image-search-layer#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
