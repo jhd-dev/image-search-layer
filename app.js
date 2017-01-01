@@ -5,7 +5,7 @@ var Flickr = require("flickrapi");
 
 var photoResults = 10;
 var recentResults = 10;
-var port = process.env.port || 8080;
+var port = process.env.PORT || 8080;
 var mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/urls';
 var flickrOptions = {
     api_key: process.env.FLICKR_KEY,
@@ -28,7 +28,6 @@ app.get('/search/:text', function(req, res){
             extras: "description, url_o, url_t"
         }, function(err, result){
             if (err) throw err;
-            //console.log(result.photos.photo);
             res.writeHead(200, {
                 "Content-Type": "application/json" 
             });
