@@ -54,6 +54,24 @@ app.get('/search/:text', function(req, res){
     });
 });
 
+app.get('/recent', function(req, res){
+    mongo.connect(mongoUrl, function(err, db){
+        if (err) throw err;
+        db.collection('searches').find().sort({_id: -1}).limit(recentResults).toArray(function(err, searches){
+            if (err) throw err;
+            res.writeHead(200, {
+                "Content-Type": "application/json" 
+            });
+            res.end(JSON.stringify(searches.map(function(search){
+                return {
+                    term: search.term,
+                    when: search.when
+                };
+            })));
+        });
+    });
+});
+
 app.listen(port, function(){
     console.log("App listening on port " + port); 
 });
