@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1 class="head-main">Image Search Abstraction Layer</h1>
+            <p class="description">This is an API to search for images from <a href="https://www.flickr.com/" target="_blank">Flickr</a>, as well as see previous searches on this API.</p>
+            <h2 class="head">Make a Search:</h2>
+            <code class="example input"><pre>https://porygonj-image-search-layer.herokuapp.com/search/computer%20science?offset=1</pre></code>
+            <code class="example output"><pre>[{"url":"https://farm7.staticflickr.com/6093/6355419383_c0cc01c543_o.jpg","page":"https://www.flickr.com/photos/69558967@N06/6355419383","thumbnail":"https://farm7.staticflickr.com/6093/6355419383_d57af9b596_t.jpg","description":"Computer Science professors offer an interactive way of learning."},
+{"url":"https://farm7.staticflickr.com/6152/6184832940_aeebd97d48_o.jpg","page":"https://www.flickr.com/photos/59597244@N05/6184832940","thumbnail":"https://farm7.staticflickr.com/6152/6184832940_e5b7541a42_t.jpg","description":"Soundtrack: <a href=\"http://www.youtube.com/watch?v=BOV5fNjClMA&amp;feature=related\" rel=\"nofollow\">www.youtube.com/watch?v=BOV5fNjClMA&amp;feature=related</a>\n\nTried out some new stuff on this one and it turned out pretty good."},
+{"url":"https://farm4.staticflickr.com/3366/3218725234_b70ee1078f_o.jpg","page":"https://www.flickr.com/photos/12615110@N05/3218725234","thumbnail":"https://farm4.staticflickr.com/3366/3218725234_3f171be22e_t.jpg","description":"When I was first starting my major... but by now I have graduated, so two thumbs up!"},
+{"url":"https://farm4.staticflickr.com/3147/3355075666_742b2a2155_o.jpg","page":"https://www.flickr.com/photos/20444164@N00/3355075666","thumbnail":"https://farm4.staticflickr.com/3147/3355075666_1cc8e2f334_t.jpg","description":""},
+{"url":"https://farm8.staticflickr.com/7183/7141482749_e3e7e7ec9a_o.jpg","page":"https://www.flickr.com/photos/77945739@N04/7141482749","thumbnail":"https://farm8.staticflickr.com/7183/7141482749_25b06571d0_t.jpg","description":"So much fun"},
+{"page":"https://www.flickr.com/photos/12430685@N03/3739981944","thumbnail":"https://farm3.staticflickr.com/2477/3739981944_fac3881e8d_t.jpg","description":"\n<i>Simply, &quot;is my life . . .♥</i>\n\n<b> نحنُ أمةٌ لا تقرأ .. وحسبْ ، نحن أمةٌ تقرأ وتكتبْ وتنتج !\n=) ..\n\n <u>بالمناسبه : </u>\n يوماً ما .. قالَ أبي :\nفي أيَ قُطرٍعربي\nإن أعلنَ الذكيُ عن ذكائه ِ\nفهو غبي !\n </b>"},
+{"url":"https://farm4.staticflickr.com/3895/14345321232_9d308ccdf2_o.jpg","page":"https://www.flickr.com/photos/43395739@N06/14345321232","thumbnail":"https://farm4.staticflickr.com/3895/14345321232_0bb9a2bc31_t.jpg","description":"A Knox College student explains his project in 3D computer graphics, in a computer science department presentation at the end of spring term 2014. Photo by Peter Bailley. More about Computer Science at Knox: <a href=\"http://www.knox.edu/academics/majors-and-minors/computer-science\" rel=\"nofollow\">www.knox.edu/academics/majors-and-minors/computer-science</a>"},
+{"url":"https://farm3.staticflickr.com/2899/14346085934_545eae2f89_o.jpg","page":"https://www.flickr.com/photos/43395739@N06/14346085934","thumbnail":"https://farm3.staticflickr.com/2899/14346085934_c1779fd107_t.jpg","description":"A Knox College student explains his project in 3D computer graphics, as faculty member Jaime Spacco tries out the controller, at a computer science department presentation at the end of spring term 2014. Photo by Peter Bailley. More about Computer Science at Knox: <a href=\"http://www.knox.edu/academics/majors-and-minors/computer-science\" rel=\"nofollow\">www.knox.edu/academics/majors-and-minors/computer-science</a>"},
+{"url":"https://farm6.staticflickr.com/5582/14160269578_5a547a395f_o.jpg","page":"https://www.flickr.com/photos/43395739@N06/14160269578","thumbnail":"https://farm6.staticflickr.com/5582/14160269578_d3de38e5b6_t.jpg","description":"A Knox College student explains his project in 3D computer graphics, in a computer science department presentation at the end of spring term 2014. Photo by Peter Bailley. More about Computer Science at Knox: <a href=\"http://www.knox.edu/academics/majors-and-minors/computer-science\" rel=\"nofollow\">www.knox.edu/academics/majors-and-minors/computer-science</a>"},
+{"url":"https://farm8.staticflickr.com/7123/6915804872_8323a6014b_o.jpg","page":"https://www.flickr.com/photos/43395739@N06/6915804872","thumbnail":"https://farm8.staticflickr.com/7123/6915804872_e1ea080de3_t.jpg","description":"Knox College student Casey Samoore ’12, shows some of the computer code written for his programming project &quot;Teaching Parallel Computing with Higher-Level Languages and Compelling Examples.&quot;"}]</pre></code>
+            <h2 class="head">Recent Searches:</h2>
+            <code class="example input"><pre>https://porygonj-image-search-layer.herokuapp.com/recent</pre></code>
+            <code class="example output"><pre>[{"term":"lolcatz","when":"Sun Jan 01 2017 12:21:29 GMT+0000 (UTC)"},
+{"term":"funny","when":"Sun Jan 01 2017 12:21:17 GMT+0000 (UTC)"},
+{"term":"freecodecamp","when":"Sun Jan 01 2017 12:20:51 GMT+0000 (UTC)"},
+{"term":"dank+memes","when":"Sun Jan 01 2017 12:20:29 GMT+0000 (UTC)"},
+{"term":"meme","when":"Sun Jan 01 2017 12:20:14 GMT+0000 (UTC)"},
+{"term":"cat","when":"Sun Jan 01 2017 01:11:21 GMT+0000 (UTC)"},
+{"term":"cat","when":"Sun Jan 01 2017 01:10:36 GMT+0000 (UTC)"},
+{"term":"cat","when":"Sun Jan 01 2017 00:52:35 GMT+0000 (UTC)"},
+{"term":"cat","when":"Sun Jan 01 2017 00:44:05 GMT+0000 (UTC)"},
+{"term":"cat","when":"Sun Jan 01 2017 00:43:32 GMT+0000 (UTC)"}]</pre></code>
+            <footer class="credit">A <a href="https://www.freecodecamp.com" target="_blank">FreeCodeCamp</a> project by <a href="https://github.com/porygonj" target="_blank">Jonathan Doliver</a></footer>
+        </div>
+    </body>
+</html>
