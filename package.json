@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "an API to find images using search terms, as well as see recently searched terms",
   "main": "app.js",
+  "start": "node app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "node test.js"
   },
   "repository": {
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/porygonj/image-search-layer#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "flickrapi": "^0.6.0"
   }
 }

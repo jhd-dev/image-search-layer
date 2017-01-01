@@ -1,0 +1,52 @@
+var express = require("express");
+var mongo = require("mongodb").MongoClient;
+var path = require("path");
+var Flickr = require("flickrapi");
+
+var photoResults = 10;
+var recentResults = 10;
+var mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/urls';
+var flickrOptions = {
+    api_key: process.env.FLICKR_KEY,
+    secret: process.env.FLICKR_KEY_SECRET
+};
+var app = express();
+
+app.use('/', express.static(path.join(__dirname, 'public')));
+
+app.get('/search/:text', function(req, res){
+    var offset = +req.query.offset;
+    Flickr.tokenOnly(flickrOptions, function(err, flickr){
+        if (err) throw err;
+        flickr.photos.search({
+            api_key: flickrOptions.api_key,
+            format: "json",
+            text: req.params.text,
+            sort: "relevance",
+            extras: "description, url_o, url_t"
+        }, function(err, result){
+            if (err) throw err;
+            res.writeHead(200, {
+                "Content-Type": "application/json" 
+            });
+            res.end(JSON.stringify(result.photos.photo.slice(offset, offset + photoResults).map(function(photo){
+                return {
+                    url: photo.url_o,
+                    description: photo.description,
+                    page: 'https://www.flickr.com/photos/' + photo.owner + '/' + photo.id,
+                    thumbnail: photo.url_t
+                };
+            })));
+            mongo.connect(mongoUrl, function(err, db){
+                if (err) throw err;
+                db.collection('searches').add({
+                    term: req.params.text,
+                    datetime: new Date().toString()
+                }, function(err, data){
+                    if (err) throw err;
+                    db.close();
+                });
+            });
+        });
+    });
+});
