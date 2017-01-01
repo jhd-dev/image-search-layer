@@ -20,6 +20,7 @@
   "homepage": "https://github.com/porygonj/image-search-layer#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "flickrapi": "^0.6.0"
+    "flickrapi": "^0.6.0",
+    "mongodb": "^2.2.16"
   }
 }
