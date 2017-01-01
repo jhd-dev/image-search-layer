@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+}
+
+#wrapper {
+    margin-left: 16px;
+}
+
+.example pre {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.example.input pre {
+    background-color: #dcc;
+}
+
+.example.output pre {
+    background-color: #ccd;
+}
+
+.credit {
+    margin: 24px 0 0 0;
+}
