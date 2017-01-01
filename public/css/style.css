@@ -9,7 +9,10 @@ body {
 
 .example pre {
     display: inline-block;
+    margin: 0;
     padding: 0.5em;
+    max-width: calc(100% - 32px);
+    overflow-x: scroll
 }
 
 .example.input pre {
